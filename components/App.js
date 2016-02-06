@@ -1,11 +1,17 @@
 // App.js
 
 import React from 'react'
+import Input from './Input'
 
 var App = React.createClass({
 
-  render: function() {
-    return <div>this is react!</div>
+  render() {
+    return (
+    	<div>
+    		<p>This is react!</p>
+        <Input/>
+    	</div>
+    )
   }
   
 });
