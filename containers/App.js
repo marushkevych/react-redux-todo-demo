@@ -3,7 +3,7 @@
 import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as actions from '../redux/actions'
+import actions from '../redux/actions'
 import TodoInput from '../components/TodoInput'
 import TodoList from '../components/TodoList'
 
@@ -20,4 +20,15 @@ var App = React.createClass({
 
 });
 
-module.exports = App;
+function mapStateToProps(state) {
+	return state;
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  }
+
+}
+
+module.exports = connect(mapStateToProps, mapDispatchToProps)(App);

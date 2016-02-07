@@ -5,7 +5,11 @@ import React from 'react';
 var TodoInput = React.createClass({
 
   handleSubmit: function (e) {
-
+    e.preventDefault();
+    this.props.addTodo(this.state.text);
+    this.setState({
+      text: ''
+    });
   },
 
   handleChange: function (e) {

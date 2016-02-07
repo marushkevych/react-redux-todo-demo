@@ -4,19 +4,24 @@ import React from 'react';
 
 var TodoItem = React.createClass({
 
-  handleCompleted: function() {
-
+  handleCompleted() {
+    this.props.completeTodo(this.props.todo.id);
   },
 
-  handleDelete: function() {
-
+  handleDelete() {
+    this.props.deleteTodo(this.props.todo.id);
   },
 
-  render: function() {
+  renderTextStyles() {
+    return {
+      color: this.props.todo.completed ? 'lightgrey' : 'black'
+    }
+  },
 
+  render() {
     return (
       <li>
-        <div>
+        <div style={this.renderTextStyles()}>
           {this.props.todo.text}
         </div>
         <button onClick={this.handleCompleted}>toggle completed</button>

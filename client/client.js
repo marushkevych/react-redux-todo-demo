@@ -4,6 +4,7 @@ import App from '../containers/App';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+import configureStore from '../redux/store';
 
 var initialState = {
   todos: [
@@ -13,9 +14,13 @@ var initialState = {
       text: 'Learn how to use react and redux'
     }
   ]
-}
+};
+
+var store = configureStore(initialState);
 
 render(
-  <App/>,
+	<Provider store={store}>
+    <App/>
+  </Provider>,
   document.getElementById('app')
 );

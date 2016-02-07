@@ -11,7 +11,7 @@ var TodoList = React.createClass({
       <ul>
         
         {
-          this.props.todos.map(function (todo) {
+          this.props.todos.map( todo => {
             return (
               <TodoItem 
                 key={todo.id} 
@@ -19,7 +19,7 @@ var TodoList = React.createClass({
                 deleteTodo={this.props.actions.deleteTodo} 
                 completeTodo={this.props.actions.completeTodo} />
             )
-          }.bind(this))
+          })
         }
         
       </ul>
